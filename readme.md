@@ -1,3 +1,15 @@
+# @alloc/is
+
+Fork of `@sindresorhus/is`
+
+### Versions
+
+- `1.2.0` => [aeb3f74d653cf745abf2460f0896207de00c6059](https://github.com/alloc/is/commit/aeb3f74d653cf745abf2460f0896207de00c6059)
+
+---
+
+&nbsp;
+
 # is [![Build Status](https://travis-ci.org/sindresorhus/is.svg?branch=master)](https://travis-ci.org/sindresorhus/is)
 
 > Type check values
