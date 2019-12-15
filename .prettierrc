@@ -1,0 +1,14 @@
+{
+  "bracketSpacing": true,
+  "jsxBracketSameLine": true,
+  "printWidth": 160,
+  "singleQuote": true,
+  "semi": false,
+  "trailingComma": "es5",
+  "overrides": [
+    {
+      "files": ["babel.config.js", "spec/**"],
+      "options": { "printWidth": 80 }
+    }
+  ]
+}
