@@ -4,7 +4,8 @@
   "description": "Runtime type checking",
   "main": "lib/is.js",
   "files": [
-    "lib"
+    "lib",
+    "src/is.ts"
   ],
   "license": "MIT",
   "repository": "alloc/is",
