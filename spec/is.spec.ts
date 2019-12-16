@@ -188,6 +188,12 @@ test('is.date', () => {
   expect(is.date).toMatchValues([date])
 })
 
+test('is.defined', () => {
+  const matches = is.defined(values)
+  expect(matches).not.toContain(undefined)
+  expect(matches).not.toEqual([])
+})
+
 test('is.emptyObject', () => {
   expect(is.emptyObject).toMatchValues([
     emptyObject,

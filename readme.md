@@ -64,6 +64,7 @@ to jump between the tests of each `is.` function.
 - `is.boolean(value)`
 - `is.class(value)` Returns true for `class` functions (but not transpiled classes)
 - `is.date(value)`
+- `is.defined(value)` The opposite of `is.undefined`
 - `is.emptyObject(value)` Returns true for plain objects with no keys
 - `is.error(value)`
 - `is.generator(value)` Returns true for objects returned by [generator functions][3]

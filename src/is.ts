@@ -12,6 +12,7 @@ const isBigint = isOfType<bigint>('bigint')
 const isBoolean = (value: unknown): value is boolean => value === true || value === false
 const isClass = (value: unknown): value is Class => isFunction(value) && value.toString().startsWith('class ')
 const isDate = isObjectOfType<Date>('Date')
+const isDefined = <T>(value: T): value is Exclude<T, void> => value !== undefined
 const isError = isObjectOfType<Error>('Error')
 const isFunction = isOfType<Function>('function')
 const isGenerator = (value: unknown): value is Generator => isIterable(value) && isFunction(value.next) && isFunction(value.throw)
@@ -89,6 +90,7 @@ export const is = Object.freeze({
   boolean: isBoolean,
   class: isClass,
   date: isDate,
+  defined: isDefined,
   emptyObject: isEmptyObject,
   error: isError,
   generator: isGenerator,
