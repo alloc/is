@@ -1,6 +1,6 @@
 {
   "name": "@alloc/is",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Runtime type checking",
   "main": "lib/is.js",
   "files": [
