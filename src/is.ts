@@ -5,7 +5,7 @@ export type Class<T = unknown> = new (...args: any[]) => T
 export type EmptyObject = { [key: string]: never }
 export type PlainObject = { [key: string]: unknown }
 
-const isArray = Array.isArray
+const isArray = Array.isArray as (value: unknown) => value is readonly any[]
 const isAsyncFunction = (value: unknown): value is AsyncFunction => getObjectType(value) === 'AsyncFunction'
 const isAsyncIterable = (value: unknown): value is AsyncIterableIterator<unknown> => !!value && isFunction((value as any)[Symbol.asyncIterator])
 const isBigint = isOfType<bigint>('bigint')
