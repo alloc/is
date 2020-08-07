@@ -2,26 +2,29 @@
   "name": "@alloc/is",
   "version": "2.1.1",
   "description": "Runtime type checking",
-  "main": "lib/is.js",
+  "main": "dist/is.js",
+  "module": "dist/is.mjs",
+  "typings": "dist/is.d.ts",
   "files": [
-    "lib",
-    "src/is.ts"
+    "dist",
+    "src"
   ],
   "license": "MIT",
   "repository": "alloc/is",
   "scripts": {
-    "build": "tsc -p ./src --target es5",
+    "build": "rollup -c",
     "prepare": "npm run build",
     "test": "jest"
   },
   "sideEffects": false,
   "devDependencies": {
-    "@babel/core": "^7.7.4",
-    "@babel/preset-env": "^7.7.4",
-    "@babel/preset-typescript": "^7.7.4",
     "@types/jest": "^24.0.23",
+    "esbuild": "^0.6.17",
     "jest": "^24.9.0",
     "prettier": "^1.19.1",
+    "rollup": "^2.23.0",
+    "rollup-plugin-dts": "^1.4.10",
+    "rollup-plugin-esbuild": "^2.4.2",
     "typescript": "^3.7.3"
   }
 }
