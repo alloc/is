@@ -1,6 +1,6 @@
 {
   "name": "@alloc/is",
-  "version": "2.1.2",
+  "version": "3.0.0",
   "description": "Runtime type checking",
   "main": "dist/is.js",
   "module": "dist/is.mjs",
