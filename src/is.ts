@@ -3,7 +3,8 @@ const { toString } = Object.prototype
 export type AsyncFunction<T = unknown> = (...args: any[]) => Promise<T>
 export type Class<T = unknown> = new (...args: any[]) => T
 export type EmptyObject = { [key: string]: never }
-export type PlainObject = { [key: string]: unknown }
+export type NativeObject = Function | readonly any[] | Map<any, any> | Set<any> | WeakMap<any, any> | WeakSet<any> | Promise<any> | Date | RegExp
+export type PlainObject<T> = Exclude<T & { [key: string]: any }, NativeObject>
 
 const isArray = Array.isArray as (value: unknown) => value is readonly any[]
 const isAsyncFunction = (value: unknown): value is AsyncFunction => getObjectType(value) === 'AsyncFunction'
@@ -36,7 +37,7 @@ const isUndefined = isOfType<undefined>('undefined')
 const isWeakMap = isObjectOfType<WeakMap<object, unknown>>('WeakMap')
 const isWeakSet = isObjectOfType<WeakSet<object>>('WeakSet')
 
-const isPlainObject = (value: unknown): value is PlainObject => {
+const isPlainObject = <T>(value: T): value is PlainObject<T> => {
   if (getObjectType(value) !== 'Object') {
     return false
   }
