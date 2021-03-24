@@ -22,14 +22,16 @@ const isInfinite = (value: unknown): value is number => value === Infinity || va
 const isInteger = (value: unknown): value is number => Number.isInteger(value as number)
 const isIterable = (value: unknown): value is IterableIterator<unknown> => !!value && isFunction((value as any)[Symbol.iterator])
 const isMap = isObjectOfType<Map<unknown, unknown>>('Map')
-const isNaN = Number.isNaN
+const isNan = Number.isNaN
 const isNull = (value: unknown): value is null => value === null
-const isNumber = isOfType<number>('number')
+const isNumber = (value: unknown): value is number => isNumberLike(value) && !isNan(value)
+const isNumberLike = isOfType<number>('number')
 const isObject = isOfType<object>('object')
 const isObjectOrFunction = (value: unknown): value is object => !!value && (isObject(value) || isFunction(value))
 const isPromise = isObjectOfType<Promise<unknown>>('Promise')
 const isPromiseLike = (value: unknown): value is PromiseLike<unknown> => !!value && isFunction((value as any).then)
 const isRegExp = isObjectOfType<RegExp>('RegExp')
+const isSafeInteger = Number.isSafeInteger as (value: unknown) => value is number
 const isSet = isObjectOfType<Set<unknown>>('Set')
 const isString = isOfType<string>('string')
 const isSymbol = isOfType<symbol>('symbol')
@@ -54,7 +56,7 @@ const isEmptyObject = (value: object): value is EmptyObject => {
 /**
  * Returns the type name of `value`
  */
-const getType = (value: unknown) =>
+export const isWhat = (value: unknown) =>
   value === null //
     ? 'null'
     : isObjectOrFunction(value)
@@ -65,7 +67,7 @@ const getType = (value: unknown) =>
  * Returns true if `value` was created by `constructor` and not by
  * a subclass of `constructor`.
  */
-const isType = <T>(value: unknown, constructor: Class<T>): value is T =>
+export const isType = <T>(value: unknown, constructor: Class<T>): value is T =>
   // Was `value` created by `constructor` and not a subclass of `constructor`?
   !!value && Object.getPrototypeOf(value) === constructor.prototype
 
@@ -73,17 +75,46 @@ const isType = <T>(value: unknown, constructor: Class<T>): value is T =>
  * Returns true if `value` was created by `constructor` or a subclass
  * of `constructor`.
  */
-const isKind = <T>(value: unknown, constructor: Class<T>): value is T =>
+export const isKind = <T>(value: unknown, constructor: Class<T>): value is T =>
   // Is `constructor` in the prototype chain of `value`?
   value instanceof constructor
 
+export {
+  isArray,
+  isAsyncFunction,
+  isAsyncIterable,
+  isBigint,
+  isBoolean,
+  isClass,
+  isDate,
+  isDefined,
+  isEmptyObject,
+  isError,
+  isGenerator,
+  isGeneratorFunction,
+  isFunction,
+  isInfinite,
+  isInteger,
+  isIterable,
+  isMap,
+  isNan,
+  isNull,
+  isNumber,
+  isObjectOrFunction as isObject,
+  isPlainObject,
+  isPromise,
+  isPromiseLike,
+  isRegExp,
+  isSafeInteger,
+  isSet,
+  isString,
+  isSymbol,
+  isUndefined,
+  isWeakMap,
+  isWeakSet,
+}
+
 export const is = Object.freeze({
-  what: getType,
-  type: isType,
-  kind: isKind,
-  //
-  // Type predicates
-  //
   array: isArray,
   asyncFunction: isAsyncFunction,
   asyncIterable: isAsyncIterable,
@@ -101,15 +132,15 @@ export const is = Object.freeze({
   integer: isInteger,
   iterable: isIterable,
   map: isMap,
-  nan: isNaN,
+  nan: isNan,
   null: isNull,
-  number: (value: unknown): value is number => isNumber(value) && !isNaN(value),
+  number: isNumber,
   object: isObjectOrFunction,
   plainObject: isPlainObject,
   promise: isPromise,
   promiseLike: isPromiseLike,
   regExp: isRegExp,
-  safeInteger: Number.isSafeInteger as (value: unknown) => value is number,
+  safeInteger: isSafeInteger,
   set: isSet,
   string: isString,
   symbol: isSymbol,
