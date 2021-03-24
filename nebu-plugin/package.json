@@ -1,0 +1,13 @@
+{
+  "name": "nebu-plugin-alloc__is",
+  "private": true,
+  "version": "0.0.0",
+  "devDependencies": {
+    "nebu": "^2.0.0",
+    "uvu": "^0.5.1",
+    "uvu-watch": "^1.0.11"
+  },
+  "peerDependencies": {
+    "nebu": ">=2"
+  }
+}

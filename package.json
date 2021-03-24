@@ -7,7 +7,8 @@
   "typings": "dist/is.d.ts",
   "files": [
     "dist",
-    "src"
+    "src",
+    "nebu-plugin"
   ],
   "license": "MIT",
   "repository": "alloc/is",
