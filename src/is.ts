@@ -114,7 +114,7 @@ export {
   isWeakSet,
 }
 
-export const is = Object.freeze({
+export const is = /*#__PURE__*/ Object.freeze({
   array: isArray,
   asyncFunction: isAsyncFunction,
   asyncIterable: isAsyncIterable,
