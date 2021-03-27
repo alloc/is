@@ -8,7 +8,7 @@
   "files": [
     "dist",
     "src",
-    "nebu-plugin"
+    "nebu-plugin/{*.js,package.json}"
   ],
   "license": "MIT",
   "repository": "alloc/is",
