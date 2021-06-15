@@ -44,7 +44,7 @@ const isPlainObject = <T>(value: T): value is PlainObject<T> => {
     return false
   }
   const proto = Object.getPrototypeOf(value)
-  return proto === null || proto === Object.prototype
+  return proto === null || proto === Object.getPrototypeOf({})
 }
 
 const isEmptyObject = (value: object): value is EmptyObject => {
