@@ -12,7 +12,7 @@ const bundle = format => ({
     format: format == 'cjs' ? 'cjs' : 'es',
     sourcemap: format != 'dts',
   },
-  plugins: format == 'dts' ? [dts()] : [esbuild()],
+  plugins: format == 'dts' ? [dts()] : [esbuild({ sourceMap: true })],
   external: id => !/^[./]/.test(id),
 })
 
