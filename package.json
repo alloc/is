@@ -20,12 +20,12 @@
   "sideEffects": false,
   "devDependencies": {
     "@types/jest": "^24.0.23",
-    "esbuild": "^0.6.17",
+    "esbuild": "^0.13.8",
     "jest": "^24.9.0",
     "prettier": "^2.0.5",
     "rollup": "^2.23.0",
     "rollup-plugin-dts": "^1.4.10",
-    "rollup-plugin-esbuild": "^2.4.2",
+    "rollup-plugin-esbuild": "^4.6.0",
     "typescript": "^3.7.3"
   }
 }
