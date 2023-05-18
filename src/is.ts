@@ -9,35 +9,35 @@ export type PlainObject<T> = Exclude<T & { [key: string]: any }, NativeObject>
 const isArray = Array.isArray as (value: unknown) => value is readonly any[]
 const isAsyncFunction = (value: unknown): value is AsyncFunction => getObjectType(value) === 'AsyncFunction'
 const isAsyncIterable = (value: unknown): value is AsyncIterableIterator<unknown> => !!value && isFunction((value as any)[Symbol.asyncIterator])
-const isBigint = isOfType<bigint>('bigint')
+const isBigint = /* @__PURE__ */ isOfType<bigint>('bigint')
 const isBoolean = (value: unknown): value is boolean => value === true || value === false
 const isClass = (value: unknown): value is Class => isFunction(value) && value.toString().startsWith('class ')
-const isDate = isObjectOfType<Date>('Date')
+const isDate = /* @__PURE__ */ isObjectOfType<Date>('Date')
 const isDefined = <T>(value: T): value is Exclude<T, void> => value !== undefined
-const isError = isObjectOfType<Error>('Error')
-const isFunction = isOfType<Function>('function')
+const isError = /* @__PURE__ */ isObjectOfType<Error>('Error')
+const isFunction = /* @__PURE__ */ isOfType<Function>('function')
 const isGenerator = (value: unknown): value is Generator => isIterable(value) && isFunction(value.next) && isFunction(value.throw)
-const isGeneratorFunction = isObjectOfType<GeneratorFunction>('GeneratorFunction')
+const isGeneratorFunction = /* @__PURE__ */ isObjectOfType<GeneratorFunction>('GeneratorFunction')
 const isInfinite = (value: unknown): value is number => value === Infinity || value === -Infinity
 const isInteger = (value: unknown): value is number => Number.isInteger(value as number)
 const isIterable = (value: unknown): value is IterableIterator<unknown> => !!value && isFunction((value as any)[Symbol.iterator])
-const isMap = isObjectOfType<Map<unknown, unknown>>('Map')
+const isMap = /* @__PURE__ */ isObjectOfType<Map<unknown, unknown>>('Map')
 const isNan = Number.isNaN
 const isNull = (value: unknown): value is null => value === null
 const isNumber = (value: unknown): value is number => isNumberLike(value) && !isNan(value)
-const isNumberLike = isOfType<number>('number')
-const isObject = isOfType<object>('object')
+const isNumberLike = /* @__PURE__ */ isOfType<number>('number')
+const isObject = /* @__PURE__ */ isOfType<object>('object')
 const isObjectOrFunction = (value: unknown): value is object => !!value && (isObject(value) || isFunction(value))
-const isPromise = isObjectOfType<Promise<unknown>>('Promise')
+const isPromise = /* @__PURE__ */ isObjectOfType<Promise<unknown>>('Promise')
 const isPromiseLike = (value: unknown): value is PromiseLike<unknown> => !!value && isFunction((value as any).then)
-const isRegExp = isObjectOfType<RegExp>('RegExp')
+const isRegExp = /* @__PURE__ */ isObjectOfType<RegExp>('RegExp')
 const isSafeInteger = Number.isSafeInteger as (value: unknown) => value is number
-const isSet = isObjectOfType<Set<unknown>>('Set')
-const isString = isOfType<string>('string')
-const isSymbol = isOfType<symbol>('symbol')
-const isUndefined = isOfType<undefined>('undefined')
-const isWeakMap = isObjectOfType<WeakMap<object, unknown>>('WeakMap')
-const isWeakSet = isObjectOfType<WeakSet<object>>('WeakSet')
+const isSet = /* @__PURE__ */ isObjectOfType<Set<unknown>>('Set')
+const isString = /* @__PURE__ */ isOfType<string>('string')
+const isSymbol = /* @__PURE__ */ isOfType<symbol>('symbol')
+const isUndefined = /* @__PURE__ */ isOfType<undefined>('undefined')
+const isWeakMap = /* @__PURE__ */ isObjectOfType<WeakMap<object, unknown>>('WeakMap')
+const isWeakSet = /* @__PURE__ */ isObjectOfType<WeakSet<object>>('WeakSet')
 
 const isPlainObject = <T>(value: T): value is PlainObject<T> => {
   if (getObjectType(value) !== 'Object') {
@@ -114,7 +114,7 @@ export {
   isWeakSet,
 }
 
-export const is = /*#__PURE__*/ Object.freeze({
+export const is = /* @__PURE__ */ Object.freeze({
   array: isArray,
   asyncFunction: isAsyncFunction,
   asyncIterable: isAsyncIterable,
