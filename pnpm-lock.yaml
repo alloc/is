@@ -1,4 +1,4 @@
-lockfileVersion: 5.3
+lockfileVersion: 5.4
 
 specifiers:
   '@types/jest': ^24.0.23
@@ -16,8 +16,8 @@ devDependencies:
   jest: 24.9.0
   prettier: 2.0.5
   rollup: 2.23.0
-  rollup-plugin-dts: 1.4.10_rollup@2.23.0+typescript@3.9.7
-  rollup-plugin-esbuild: 4.6.0_esbuild@0.13.8+rollup@2.23.0
+  rollup-plugin-dts: 1.4.10_ioffxrabs6xphnifs5gwel6pxq
+  rollup-plugin-esbuild: 4.6.0_guhtre3csmiko3qbgavkdne4my
   typescript: 3.9.7
 
 packages:
@@ -31,6 +31,7 @@ packages:
   /@babel/code-frame/7.15.8:
     resolution: {integrity: sha512-2IAnmn8zbvC/jKYhq5Ki9I+DwjlrtMPUCH/CpHvqI4dNnlwHwsxoIhlc8WcYY5LSYknXQtAlFYuHfqAFCvQ4Wg==}
     engines: {node: '>=6.9.0'}
+    requiresBuild: true
     dependencies:
       '@babel/highlight': 7.14.5
     dev: true
@@ -56,6 +57,8 @@ packages:
       resolve: 1.17.0
       semver: 5.7.1
       source-map: 0.5.7
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /@babel/generator/7.11.0:
@@ -102,6 +105,8 @@ packages:
       '@babel/template': 7.10.4
       '@babel/types': 7.11.0
       lodash: 4.17.19
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /@babel/helper-optimise-call-expression/7.10.4:
@@ -121,6 +126,8 @@ packages:
       '@babel/helper-optimise-call-expression': 7.10.4
       '@babel/traverse': 7.11.0
       '@babel/types': 7.11.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /@babel/helper-simple-access/7.10.4:
@@ -152,6 +159,8 @@ packages:
       '@babel/template': 7.10.4
       '@babel/traverse': 7.11.0
       '@babel/types': 7.11.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /@babel/highlight/7.10.4:
@@ -176,6 +185,8 @@ packages:
     resolution: {integrity: sha512-Vuj/+7vLo6l1Vi7uuO+1ngCDNeVmNbTngcJFKCR/oEtz8tKz0CJxZEGmPt9KcIloZhOZ3Zit6xbpXT2MDlS9Vw==}
     engines: {node: '>=6.0.0'}
     hasBin: true
+    dependencies:
+      '@babel/types': 7.11.0
     dev: true
 
   /@babel/plugin-syntax-object-rest-spread/7.8.3_@babel+core@7.11.1:
@@ -207,6 +218,8 @@ packages:
       debug: 4.1.1
       globals: 11.12.0
       lodash: 4.17.19
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /@babel/types/7.11.0:
@@ -267,6 +280,10 @@ packages:
       rimraf: 2.7.1
       slash: 2.0.0
       strip-ansi: 5.2.0
+    transitivePeerDependencies:
+      - bufferutil
+      - supports-color
+      - utf-8-validate
     dev: true
 
   /@jest/environment/24.9.0:
@@ -277,6 +294,8 @@ packages:
       '@jest/transform': 24.9.0
       '@jest/types': 24.9.0
       jest-mock: 24.9.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /@jest/fake-timers/24.9.0:
@@ -286,6 +305,8 @@ packages:
       '@jest/types': 24.9.0
       jest-message-util: 24.9.0
       jest-mock: 24.9.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /@jest/reporters/24.9.0:
@@ -313,6 +334,10 @@ packages:
       slash: 2.0.0
       source-map: 0.6.1
       string-length: 2.0.0
+    transitivePeerDependencies:
+      - bufferutil
+      - supports-color
+      - utf-8-validate
     dev: true
 
   /@jest/source-map/24.9.0:
@@ -341,6 +366,10 @@ packages:
       jest-haste-map: 24.9.0
       jest-runner: 24.9.0
       jest-runtime: 24.9.0
+    transitivePeerDependencies:
+      - bufferutil
+      - supports-color
+      - utf-8-validate
     dev: true
 
   /@jest/transform/24.9.0:
@@ -363,6 +392,8 @@ packages:
       slash: 2.0.0
       source-map: 0.6.1
       write-file-atomic: 2.4.1
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /@jest/types/24.9.0:
@@ -512,6 +543,8 @@ packages:
     dependencies:
       micromatch: 3.1.10
       normalize-path: 2.1.1
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /arr-diff/4.0.0:
@@ -595,6 +628,8 @@ packages:
       babel-preset-jest: 24.9.0_@babel+core@7.11.1
       chalk: 2.4.2
       slash: 2.0.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /babel-plugin-istanbul/5.2.0:
@@ -605,6 +640,8 @@ packages:
       find-up: 3.0.0
       istanbul-lib-instrument: 3.3.0
       test-exclude: 5.2.3
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /babel-plugin-jest-hoist/24.9.0:
@@ -676,6 +713,8 @@ packages:
       snapdragon-node: 2.1.1
       split-string: 3.1.0
       to-regex: 3.0.2
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /browser-process-hrtime/1.0.0:
@@ -856,12 +895,22 @@ packages:
 
   /debug/2.6.9:
     resolution: {integrity: sha512-bC7ElrdJaJnPbAP+1EotYvqZsb3ecl5wi6Bfi6BJTUcNowp6cvspg0jXznRTKDjm/E7AdgFBVeAPVMNcKGsHMA==}
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
     dependencies:
       ms: 2.0.0
     dev: true
 
   /debug/4.1.1:
     resolution: {integrity: sha512-pYAIzeRo8J6KPEaJ0VWOh5Pzkbw/RetuzehGM7QRRX5he4fPHx2rdKMB256ehJCkX+XRQm16eZLqLNS8RSZXZw==}
+    peerDependencies:
+      supports-color: '*'
+    peerDependenciesMeta:
+      supports-color:
+        optional: true
     dependencies:
       ms: 2.1.2
     dev: true
@@ -1210,6 +1259,8 @@ packages:
       regex-not: 1.0.2
       snapdragon: 0.8.2
       to-regex: 3.0.2
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /expect/24.9.0:
@@ -1222,6 +1273,8 @@ packages:
       jest-matcher-utils: 24.9.0
       jest-message-util: 24.9.0
       jest-regex-util: 24.9.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /extend-shallow/2.0.1:
@@ -1255,6 +1308,8 @@ packages:
       regex-not: 1.0.2
       snapdragon: 0.8.2
       to-regex: 3.0.2
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /extsprintf/1.3.0:
@@ -1711,6 +1766,8 @@ packages:
       '@babel/types': 7.11.0
       istanbul-lib-coverage: 2.0.5
       semver: 6.3.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /istanbul-lib-report/2.0.8:
@@ -1731,6 +1788,8 @@ packages:
       make-dir: 2.1.0
       rimraf: 2.7.1
       source-map: 0.6.1
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /istanbul-reports/2.2.7:
@@ -1767,6 +1826,10 @@ packages:
       prompts: 2.3.2
       realpath-native: 1.1.0
       yargs: 13.3.2
+    transitivePeerDependencies:
+      - bufferutil
+      - supports-color
+      - utf-8-validate
     dev: true
 
   /jest-config/24.9.0:
@@ -1790,6 +1853,10 @@ packages:
       micromatch: 3.1.10
       pretty-format: 24.9.0
       realpath-native: 1.1.0
+    transitivePeerDependencies:
+      - bufferutil
+      - supports-color
+      - utf-8-validate
     dev: true
 
   /jest-diff/24.9.0:
@@ -1818,6 +1885,8 @@ packages:
       jest-get-type: 24.9.0
       jest-util: 24.9.0
       pretty-format: 24.9.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /jest-environment-jsdom/24.9.0:
@@ -1830,6 +1899,10 @@ packages:
       jest-mock: 24.9.0
       jest-util: 24.9.0
       jsdom: 11.12.0
+    transitivePeerDependencies:
+      - bufferutil
+      - supports-color
+      - utf-8-validate
     dev: true
 
   /jest-environment-node/24.9.0:
@@ -1841,6 +1914,8 @@ packages:
       '@jest/types': 24.9.0
       jest-mock: 24.9.0
       jest-util: 24.9.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /jest-get-type/24.9.0:
@@ -1865,6 +1940,8 @@ packages:
       walker: 1.0.7
     optionalDependencies:
       fsevents: 1.2.13
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /jest-jasmine2/24.9.0:
@@ -1887,6 +1964,8 @@ packages:
       jest-util: 24.9.0
       pretty-format: 24.9.0
       throat: 4.1.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /jest-leak-detector/24.9.0:
@@ -1919,6 +1998,8 @@ packages:
       micromatch: 3.1.10
       slash: 2.0.0
       stack-utils: 1.0.2
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /jest-mock/24.9.0:
@@ -1952,6 +2033,8 @@ packages:
       '@jest/types': 24.9.0
       jest-regex-util: 24.9.0
       jest-snapshot: 24.9.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /jest-resolve/24.9.0:
@@ -1988,6 +2071,10 @@ packages:
       jest-worker: 24.9.0
       source-map-support: 0.5.19
       throat: 4.1.0
+    transitivePeerDependencies:
+      - bufferutil
+      - supports-color
+      - utf-8-validate
     dev: true
 
   /jest-runtime/24.9.0:
@@ -2018,6 +2105,10 @@ packages:
       slash: 2.0.0
       strip-bom: 3.0.0
       yargs: 13.3.2
+    transitivePeerDependencies:
+      - bufferutil
+      - supports-color
+      - utf-8-validate
     dev: true
 
   /jest-serializer/24.9.0:
@@ -2042,6 +2133,8 @@ packages:
       natural-compare: 1.4.0
       pretty-format: 24.9.0
       semver: 6.3.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /jest-util/24.9.0:
@@ -2060,6 +2153,8 @@ packages:
       mkdirp: 0.5.5
       slash: 2.0.0
       source-map: 0.6.1
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /jest-validate/24.9.0:
@@ -2085,6 +2180,8 @@ packages:
       chalk: 2.4.2
       jest-util: 24.9.0
       string-length: 2.0.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /jest-worker/24.9.0:
@@ -2102,6 +2199,10 @@ packages:
     dependencies:
       import-local: 2.0.0
       jest-cli: 24.9.0
+    transitivePeerDependencies:
+      - bufferutil
+      - supports-color
+      - utf-8-validate
     dev: true
 
   /joycon/3.0.1:
@@ -2146,6 +2247,9 @@ packages:
       whatwg-url: 6.5.0
       ws: 5.2.2
       xml-name-validator: 3.0.0
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
     dev: true
 
   /jsesc/2.5.2:
@@ -2319,6 +2423,8 @@ packages:
       regex-not: 1.0.2
       snapdragon: 0.8.2
       to-regex: 3.0.2
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /mime-db/1.44.0:
@@ -2386,6 +2492,8 @@ packages:
       regex-not: 1.0.2
       snapdragon: 0.8.2
       to-regex: 3.0.2
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /natural-compare/1.4.0:
@@ -2833,7 +2941,7 @@ packages:
       glob: 7.1.6
     dev: true
 
-  /rollup-plugin-dts/1.4.10_rollup@2.23.0+typescript@3.9.7:
+  /rollup-plugin-dts/1.4.10_ioffxrabs6xphnifs5gwel6pxq:
     resolution: {integrity: sha512-bL6MBXc8lK7D5b/tYbHaglxs4ZxMQTQilGA6Xm9KQBEj4h9ZwIDlAsvDooGjJ/cOw23r3POTRtSCEyTHxtzHJg==}
     peerDependencies:
       rollup: ^2.23.0
@@ -2845,7 +2953,7 @@ packages:
       '@babel/code-frame': 7.15.8
     dev: true
 
-  /rollup-plugin-esbuild/4.6.0_esbuild@0.13.8+rollup@2.23.0:
+  /rollup-plugin-esbuild/4.6.0_guhtre3csmiko3qbgavkdne4my:
     resolution: {integrity: sha512-fjihkrOCy7qeNDd1VmtWw39UA4b6a96NVrsuK6eg1SArnWoS3G4xLoW7liF0oRQU7+ONPr/Gjxz9cv+WLRhaGA==}
     engines: {node: '>=12'}
     peerDependencies:
@@ -2904,6 +3012,8 @@ packages:
       micromatch: 3.1.10
       minimist: 1.2.5
       walker: 1.0.7
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /sax/1.2.4:
@@ -2991,6 +3101,8 @@ packages:
       source-map: 0.5.7
       source-map-resolve: 0.5.3
       use: 3.1.1
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /source-map-resolve/0.5.3:
@@ -3390,6 +3502,14 @@ packages:
 
   /ws/5.2.2:
     resolution: {integrity: sha512-jaHFD6PFv6UgoIVda6qZllptQsMlDEJkTQcybzzXDYM1XO9Y8em691FGMPmM46WGyLU4z9KMgQN+qrux/nhlHA==}
+    peerDependencies:
+      bufferutil: ^4.0.1
+      utf-8-validate: ^5.0.2
+    peerDependenciesMeta:
+      bufferutil:
+        optional: true
+      utf-8-validate:
+        optional: true
     dependencies:
       async-limiter: 1.0.1
     dev: true
