@@ -6,7 +6,7 @@ export type EmptyObject = { [key: string]: never }
 export type NativeObject = Function | readonly any[] | Map<any, any> | Set<any> | WeakMap<any, any> | WeakSet<any> | Promise<any> | Date | RegExp
 export type PlainObject<T> = Exclude<T & { [key: string]: any }, NativeObject>
 
-const isArray = /* @__PURE__ */ Array.isArray as (value: unknown) => value is readonly any[]
+const isArray = /* @__PURE__ */ (() => Array.isArray as (value: unknown) => value is readonly any[])()
 const isAsyncFunction = (value: unknown): value is AsyncFunction => getObjectType(value) === 'AsyncFunction'
 const isAsyncIterable = (value: unknown): value is AsyncIterableIterator<unknown> => !!value && isFunction((value as any)[Symbol.asyncIterator])
 const isBigint = /* @__PURE__ */ isOfType<bigint>('bigint')
@@ -22,7 +22,7 @@ const isInfinite = (value: unknown): value is number => value === Infinity || va
 const isInteger = (value: unknown): value is number => Number.isInteger(value as number)
 const isIterable = (value: unknown): value is IterableIterator<unknown> => !!value && isFunction((value as any)[Symbol.iterator])
 const isMap = /* @__PURE__ */ isObjectOfType<Map<unknown, unknown>>('Map')
-const isNan = /* @__PURE__ */ Number.isNaN
+const isNan = /* @__PURE__ */ (() => Number.isNaN)()
 const isNull = (value: unknown): value is null => value === null
 const isNumber = (value: unknown): value is number => isNumberLike(value) && !isNan(value)
 const isNumberLike = /* @__PURE__ */ isOfType<number>('number')
@@ -31,7 +31,7 @@ const isObjectOrFunction = (value: unknown): value is object => !!value && (isOb
 const isPromise = /* @__PURE__ */ isObjectOfType<Promise<unknown>>('Promise')
 const isPromiseLike = (value: unknown): value is PromiseLike<unknown> => !!value && isFunction((value as any).then)
 const isRegExp = /* @__PURE__ */ isObjectOfType<RegExp>('RegExp')
-const isSafeInteger = /* @__PURE__ */ Number.isSafeInteger as (value: unknown) => value is number
+const isSafeInteger = /* @__PURE__ */ (() => Number.isSafeInteger as (value: unknown) => value is number)()
 const isSet = /* @__PURE__ */ isObjectOfType<Set<unknown>>('Set')
 const isString = /* @__PURE__ */ isOfType<string>('string')
 const isSymbol = /* @__PURE__ */ isOfType<symbol>('symbol')
