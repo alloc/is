@@ -19,29 +19,29 @@ import { is } from 'is'
 // Object types are camel case.
 //
 
-is.what(0) // 'number'
-is.what({}) // 'Object'
+isWhat(0) // 'number'
+isWhat({}) // 'Object'
 
 //
 // Check the constructor of a value.
 //
 
-is.type(0, Number) // true
-is.type({}, Object) // true
-is.type([], Object) // false
+isType(0, Number) // true
+isType({}, Object) // true
+isType([], Object) // false
 
 //
 // Find a constructor in a value's prototype chain.
 //
 
-is.kind([], Object) // true
+isKind([], Object) // true
 
 //
 // Check if the value is a specific type.
 //
 
-is.number(0) // true
-is.array([]) // true
+isNumber(0) // true
+isArray([]) // true
 ```
 
 **See the tests for expected behavior.** They are very readable, just search for `test(`
@@ -54,38 +54,38 @@ to jump between the tests of each `is.` function.
 [3]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*
 [4]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/iterator
 
-- `is.what(value)` Get the type name of a value
-- `is.type(value, constructor)` Check the constructor of a value
-- `is.kind(value, constructor)` Find a constructor in a value's [prototype chain][1]
-- `is.array(value)` Same as `Array.isArray`
-- `is.asyncFunction(value)`
-- `is.asyncIterable(value)` Returns true for objects returned by [`Symbol.asyncIterator`][2] functions
-- `is.bigint(value)`
-- `is.boolean(value)`
-- `is.class(value)` Returns true for `class` functions (but not transpiled classes)
-- `is.date(value)`
-- `is.defined(value)` The opposite of `is.undefined`
-- `is.emptyObject(value)` Returns true for plain objects with no keys
-- `is.error(value)`
-- `is.generator(value)` Returns true for objects returned by [generator functions][3]
-- `is.generatorFunction(value)`
-- `is.function(value)`
-- `is.infinite(value)`
-- `is.integer(value)`
-- `is.iterable(value)` Returns true for objects returned by [`Symbol.iterator`][4] functions
-- `is.map(value)`
-- `is.nan(value)` Same as `Number.isNaN`
-- `is.null(value)`
-- `is.number(value)` Returns true for any number (but never `NaN`)
-- `is.object(value)` Returns true for any object or function (but never `null`)
-- `is.plainObject(value)` Returns true for objects created by `{}`, `new Object`, or `Object.create(null)`
-- `is.promise(value)`
-- `is.promiseLike(value)` Returns true for objects with a `then` method
-- `is.regExp(value)`
-- `is.safeInteger(value)` Same as `Number.isSafeInteger`
-- `is.set(value)`
-- `is.string(value)`
-- `is.symbol(value)`
-- `is.undefined(value)`
-- `is.weakMap(value)`
-- `is.weakSet(value)`
+- `isWhat(value)` Get the type name of a value
+- `isType(value, constructor)` Check the constructor of a value
+- `isKind(value, constructor)` Find a constructor in a value's [prototype chain][1]
+- `isArray(value)` Same as `Array.isArray`
+- `isAsyncFunction(value)`
+- `isAsyncIterable(value)` Returns true for objects returned by [`Symbol.asyncIterator`][2] functions
+- `isBigint(value)`
+- `isBoolean(value)`
+- `isClass(value)` Returns true for `class` functions (but not transpiled classes)
+- `isDate(value)`
+- `isDefined(value)` The opposite of `isUndefined`
+- `isEmptyObject(value)` Returns true for plain objects with no keys
+- `isError(value)`
+- `isGenerator(value)` Returns true for objects returned by [generator functions][3]
+- `isGeneratorFunction(value)`
+- `isFunction(value)`
+- `isInfinite(value)`
+- `isInteger(value)`
+- `isIterable(value)` Returns true for objects returned by [`Symbol.iterator`][4] functions
+- `isMap(value)`
+- `isNan(value)` Same as `Number.isNaN`
+- `isNull(value)`
+- `isNumber(value)` Returns true for any number (but never `NaN`)
+- `isObject(value)` Returns true for any object or function (but never `null`)
+- `isPlainObject(value)` Returns true for objects created by `{}`, `new Object`, or `Object.create(null)`
+- `isPromise(value)`
+- `isPromiseLike(value)` Returns true for objects with a `then` method
+- `isRegExp(value)`
+- `isSafeInteger(value)` Same as `Number.isSafeInteger`
+- `isSet(value)`
+- `isString(value)`
+- `isSymbol(value)`
+- `isUndefined(value)`
+- `isWeakMap(value)`
+- `isWeakSet(value)`
